@@ -8,6 +8,17 @@
 </head>
 <body>
     <h1>Bienvenido a AutoMart</h1>
-    
+
+    {% for auto in autos %}
+        <p>{{ auto.nombre }}</p>
+        <p>{{ auto.modelo }}</p>
+        {% if auto.precio > 0 %}
+            <p>$ {{ auto.precio }}</p>
+        {% else %}
+            <p>Auto de Colección</p>
+        {% endif %}
+        <p>{{ auto.color }}</p>
+        <hr />
+    {% endfor %}
 </body>
 </html>
