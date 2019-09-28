@@ -23,15 +23,16 @@ def index(request):
     return render(request, 'index.html', {'autos' : autos})
 
 class Auto:
-    def __init__(self, nombre, modelo, precio, color):
+    def __init__(self, nombre, modelo, precio, color, img_url):
         self.nombre = nombre
         self.modelo = modelo
         self.precio = precio
         self.color = color
+        self.img_url = img_url
 
 autos = [
-    Auto("VW Jetta", 2018, 145000, "Terracota"),
-    Auto("Ibiza", 2017, 130000, "Blanco"),
-    Auto("Futura", 1955, 0, "Azul plata"),
-    Auto("Ford", 1999, 35000, "Negro")
+    Auto("VW Jetta", 2018, 145000, "Terracota", "https://soloautos.pxcrush.net/car/private/8lb3md6jngip2sbfd6zp5g0i6.jpg?pxc_method=gravityfill&pxc_size=720,480&pxc_bgtype=self"),
+    Auto("Ibiza", 2017, 130000, "Blanco", "https://img.automexico.com/crop/535x349/2018/08/20/624f2eda-b-4a93.jpg"),
+    Auto("Futura", 1955, 0, "Negro", "https://www.autoclasico.com.mx/Resources/Fotos/05/89/F05-0446789.jpg"),
+    Auto("Ford", 1999, 35000, "Azul", "https://www.autosenreynosa.com/autos/img/larges/1524124161461.jpg")
 ] 
