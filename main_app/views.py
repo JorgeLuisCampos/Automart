@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Auto
 # from django.http import HttpResponse  # ya no se necesita, ya que se usa el template
 
 
@@ -19,9 +20,10 @@ def index(request):
      'auto_color' : color
     }
     """
-
+    autos = Auto.objects.all()
     return render(request, 'index.html', {'autos' : autos})
 
+""" Eliminado para usar models.py
 class Auto:
     def __init__(self, nombre, modelo, precio, color, img_url):
         self.nombre = nombre
@@ -36,3 +38,4 @@ autos = [
     Auto("Futura", 1955, 0, "Negro", "https://www.autoclasico.com.mx/Resources/Fotos/05/89/F05-0446789.jpg"),
     Auto("Ford", 1999, 35000, "Azul", "https://www.autosenreynosa.com/autos/img/larges/1524124161461.jpg")
 ] 
+"""
