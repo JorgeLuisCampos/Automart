@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Automart - {{ auto.nombre }}</title>
-</head>
-<body>
-    <h1>{{ auto.nombre }}</h1>
-    <img src="{{ auto.img_url }}" alt="{{ auto.nombre }}" class="auto-picture">
-    <p>Modelo: <strong>{{ auto.modelo }}</strong></p>
-    {% if auto.precio > 0 %}
-        <p>Precio: <strong>${{ auto.precio }}</strong></p>
-    {% else %}
-        <p>Auto de Colección</p>
-    {% endif %}
-    <p>Color: <strong>{{ auto.color }}</strong></p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %} 
+    <div class="album py-5 bg-light">
+        <h1>{{ auto.nombre }}</h1>
+        <img src="{{ auto.img_url }}" alt="{{ auto.nombre }}" class="rounded mx-auto d-block">
+        <p>Modelo: <strong>{{ auto.modelo }}</strong></p>
+        {% if auto.precio > 0 %}
+            <p>Precio: <strong>${{ auto.precio }}</strong></p>
+        {% else %}
+            <p>Auto de Colección</p>
+        {% endif %}
+        <p>Color: <strong>{{ auto.color }}</strong></p>
+    </div>
+{% endblock %}
