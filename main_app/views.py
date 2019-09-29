@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect  # ya no se necesita, ya que se usa el template # Ahora siempre sí
 from .models import Auto
 from .forms import AutoForm
+from django_user_agents.utils import get_user_agent
 
 
 # Create your views here.
@@ -14,7 +15,8 @@ def index(request):
 
 def show(request, auto_id):
     auto = Auto.objects.get(id=auto_id)
-    return render(request, 'show.html', {'auto' : auto})
+    ua = get_user_agent(request)
+    return render(request, 'show.html', {'auto' : auto, 'user_agent': ua})
 
 def post_auto(request):
     form = AutoForm(request.POST)

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load user_agents %}
 
 {% block content %} 
     <div class="album py-5 bg-light descripcion" >
@@ -12,5 +13,10 @@
             <p>Auto de Colección</p>
         {% endif %}
         <p>Color: <strong>{{ auto.color }}</strong></p>
+    </div>
+    <div class="album py-5 bg-light descripcion" >
+        <h1>
+            {{ user_agent }}
+        </h1>
     </div>
 {% endblock %}
