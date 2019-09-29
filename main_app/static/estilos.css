@@ -6,3 +6,7 @@ h1 {
     max-width: 350px;
     height: 300PX;
 }
+
+.descripcion {
+    text-align: center;
+}
